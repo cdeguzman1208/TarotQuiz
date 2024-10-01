@@ -404,7 +404,11 @@ function displayResults() {
     // Add a link to learn more about the card
     const referenceLink = document.createElement("p");
     referenceLink.innerHTML = `Want to know more about your card? Check out the <a href="card_reference.html" target="_blank">Tarot Card Reference Page</a>!`;
-    resultDiv.appendChild(referenceLink);
+    resultText.appendChild(referenceLink); // Append to resultText instead of resultDiv
+
+    const OtherHeading = document.createElement("h4");
+    OtherHeading.innerHTML = `Other Alignments`;
+    resultText.appendChild(OtherHeading); // Append to resultText instead of resultDiv
     
     // Display results
     sortedResults.forEach((result) => {
@@ -413,6 +417,7 @@ function displayResults() {
         resultText.appendChild(resultElement);
     });
 }
+
 
 // Start the quiz
 nextQuestion();
